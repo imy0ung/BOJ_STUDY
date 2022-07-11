@@ -1,14 +1,19 @@
-### BOJ_STUDY with Cpp
+**BOJ_STUDY with Cpp**
+---
 
-#include <iostream> = cpp에서의 입출력
-#include <cstdio> = c언어의 stdio.h
-using namespace std; = std 생략 가능
+```#include <iostream>``` = cpp에서의 입출력
+  
+```#include <cstdio>``` = c언어의 stdio.h
+  
+```using namespace std;``` = std 생략 가능
 
-STL(Standard Template Library) // iterator = 컨테이너의 포인터
+## STL(Standard Template Library)
 
 ## 1. ``` #include <vector> ```
 벡터 자료형, 동적으로 할당된 자료형이기 때문에, 배열보다 자유로움
 
+iterator = 컨테이너의 포인터
+  
  * vec.begin() = 벡터 자료형의 첫번째 원소의 주소 반환
  * vec.end() = 벡터 자료형의 마지막 원소의 주소 반환
  * vec.front() = 벡터 자료형의 첫번째 원소 반환
