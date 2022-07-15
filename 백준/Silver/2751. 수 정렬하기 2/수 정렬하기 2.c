@@ -1,31 +1,31 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <queue>
+#include <stack>
+#include <set>
+#include <map>
 #pragma warning (disable : 4996)
-#define swap(type, x, y) do {type t = x; x = y; y = t;}while(0)
 
-int q_sort(const int* a, const int* b)
-{
-	if (*a < *b)
-		return -1;
-	else if (*a > *b)
-		return 1;
-	else
-		return 0;
-}
+//boj 기준으로 1초에 1억번의 연산
 
+using namespace std;
 
-int main(void)
-{
+int arr[1000001];
+// O(n^2)은 1억개를 초과하기 때문에, 시간복잡도 고려해야함
+
+int main(void) {
 	int N;
-	scanf("%d", &N);
-	
-	int* a = calloc(N, sizeof(int));
-	
-	for (int i = 0; i < N; i++)
-		scanf("%d", &a[i]);
-	qsort(a, N, sizeof(int), q_sort);
+	cin >> N;
 
-	for (int i = 0; i < N; i++)
-		printf("%d\n", a[i]);
+	for (int i = 0; i < N; i++) {
+		cin >> arr[i];
+	}
+	sort(arr, arr + N); // n * log n의 복잡도
+	for (int i = 0; i < N; i++) {
+		if (i > 0 && arr[i] == arr[i - 1])
+			continue;
+		cout << arr[i] << '\n';
+	}
 }
