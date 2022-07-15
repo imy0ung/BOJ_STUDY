@@ -10,3 +10,6 @@
 
 정렬(sorting), 구현(implementation)
 
+### Comment
+
+선택정렬을 사용했는데, 시간 복잡도를 고려하지 않아도 되는 문제.
