@@ -30,6 +30,9 @@ iterator = 컨테이너의 포인터
   * pair <type1, type2>
   * p.first , p.second 로 접근
   * make_pair<type1, type2> = pair 생성
+  
+  2-2) stable_sort
+  * 원래의 순서를 손상시키지 않으면서 정렬하는 것 - boj) 10814
 
 ## 3. ``` #include <queue> ```
   3-1) 자료구조 FIFO
