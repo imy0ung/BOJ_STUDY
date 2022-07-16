@@ -27,6 +27,7 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
  * vec.push_back() = 마지막에 데이터 추가
  * vec.pop_back() = 마지막에 데이터 삭제
  * vec.at(n) = 벡터 자료형의 n번째 원소의 값을 반환 (일반적인 경우, O(n) = 1)
+ * vec.erase(iterator 1, iterator 2) = iterator 1 부터 iterator 2까지 지워준다.
 
 ## 2. ``` #include <algorithm> ```
 
@@ -38,6 +39,12 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
   
   2-2) stable_sort
   * 원래의 순서를 손상시키지 않으면서 정렬하는 것 - boj) 10814
+  
+  2-3) unique(iterator1, iterator2) = 정렬된 컨테이너에서 iterator1 부터 iterator2 까지 중복되는 값은 맨 뒤로 보내준다. vector의 erase랑 같이 사용해서, 컨테이너의 중복되는 값을 제거해줄 수 있다.
+  
+  2-4) lower_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값보다 같거나 큰 값을 찾는 알고리즘. 반환값은 iterator. 아무래도 이진트리다 보니까 logn의 복잡도가 나와서 for문으로 이용하여 위치 찾는 것 보다 훨씬 빠르다..! 오름차순으로 정렬되어있어야 하는 걸 주의하자!
+  
+  2-5) upper_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값을 처음으로 초과하는 값을 찾는 알고리즘. 반환값은 iterator
 
 ## 3. ``` #include <queue> ```
   3-1) 자료구조 FIFO
