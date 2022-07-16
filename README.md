@@ -12,7 +12,12 @@
 ## 1. ``` #include <vector> ```
 벡터 자료형, 동적으로 할당된 자료형이기 때문에, 배열보다 자유로움
 
-iterator = 컨테이너의 포인터
+iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
+  
+ * ```vector<int> v``` = 비어있는 vector v를 생성
+ * ```vector<int> v(5)``` = 초기화 된 5개의 원소를 가지는 vector 생성
+ * ```vector<int> v(5,2)``` = 2로 초기화된 5개의 원소를 가지는 vector v 생성
+ * ```vector<int> v2(v1)``` = v2에 v1를 복사
   
  * vec.begin() = 벡터 자료형의 첫번째 원소의 주소 반환
  * vec.end() = 벡터 자료형의 마지막 원소의 주소 반환
