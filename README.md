@@ -19,15 +19,15 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
  * ```vector<int> v(5,2)``` = 2로 초기화된 5개의 원소를 가지는 vector v 생성
  * ```vector<int> v2(v1)``` = v2에 v1를 복사
   
- * vec.begin() = 벡터 자료형의 첫번째 원소의 주소 반환
- * vec.end() = 벡터 자료형의 마지막 원소의 주소 반환
- * vec.front() = 벡터 자료형의 첫번째 원소 반환
- * vec.back() = 벡터 자료형의 마지막 원소 반환
- * vec.size() = 벡터 자료형의 크기
- * vec.push_back() = 마지막에 데이터 추가
- * vec.pop_back() = 마지막에 데이터 삭제
- * vec.at(n) = 벡터 자료형의 n번째 원소의 값을 반환 (일반적인 경우, O(n) = 1)
- * vec.erase(iterator 1, iterator 2) = iterator 1 부터 iterator 2까지 지워준다.
+ * ```vec.begin()``` = 벡터 자료형의 첫번째 원소의 주소 반환
+ * ```vec.end()``` = 벡터 자료형의 마지막 원소의 주소 반환
+ * ```vec.front()``` = 벡터 자료형의 첫번째 원소 반환
+ * ```vec.back()``` = 벡터 자료형의 마지막 원소 반환
+ * ```vec.size()``` = 벡터 자료형의 크기
+ * ```vec.push_back()``` = 마지막에 데이터 추가
+ * ```vec.pop_back()``` = 마지막에 데이터 삭제
+ * ```vec.at(n)``` = 벡터 자료형의 n번째 원소의 값을 반환 (일반적인 경우, O(n) = 1)
+ * ```vec.erase(iterator 1, iterator 2)``` = iterator 1 부터 iterator 2까지 지워준다.
 
 ## 2. ``` #include <algorithm> ```
 
