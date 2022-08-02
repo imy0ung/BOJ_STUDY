@@ -1,12 +1,17 @@
 **BOJ_STUDY with Cpp**
 ---
-
-```#include <iostream>``` = cpp에서의 입출력
+## 백준에서 사용하는 기본적인 c++ 팁들
+```c++
+#include <iostream> = cpp에서의 입출력
   
-```#include <cstdio>``` = c언어의 stdio.h
+#include <cstdio> = c언어의 stdio.h
   
-```using namespace std;``` = std 생략 가능
+using namespace std; = std 생략 가능
 
+ios::sync_with_stdio(0) =  c와 동기를 끊어서 cin과 cout의 속도를 올려준다. (c의 입출력 사용불가능)
+
+cin.tie(0) = cin의 속도를 올려준다.
+```
 ## STL(Standard Template Library)
 
 ## 1. ``` #include <vector> ```
