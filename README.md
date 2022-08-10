@@ -89,3 +89,20 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
 * erase(key) = 해당 key를 가르치는 원소 삭제
 * size() = stack의 크기
 * empty() = 비어있으면 1을 반환해줌
+
+## 7. ```#include <unordered_set>```
+* 선언 방식 : ```unorderd_set<type> s ```
+* 중복허용을 하지 않음
+* 삽입 : ```s.insert()```
+* 지우기 : ```s.erase()``` 지우면 1을 반환 못지우면 0을 반환
+* 사이즈 : ```s.size()```
+* 찾기 : ```s.find(n)``` 찾은 값의 iterator를 반환, 찾지못한다면, s.end()를 반환
+
+## 8. ```#include <unordered_map>```
+* key에 대응되는 value를 찾아주는 stl
+* 선언 방식 : ```unordered_map<key_type, value_type> m ```
+* 중복허용을 하지 않음
+* 삽입 : ```s.insert()```
+* 지우기 : ```s.erase()``` 지우면 1을 반환 못지우면 0을 반환
+* 사이즈 : ```s.size()```
+* 찾기 : ```s.find(n)``` 찾은 값의 iterator를 반환, 찾지못한다면, s.end()를 반환
