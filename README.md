@@ -11,6 +11,8 @@ using namespace std; = std 생략 가능
 ios::sync_with_stdio(0) =  c와 동기를 끊어서 cin과 cout의 속도를 올려준다. (c의 입출력 사용불가능)
 
 cin.tie(0) = cin의 속도를 올려준다.
+
+stl next_permutation << 겨울방학때 백트래킹 공부하면서 알아두자
 ```
 ## STL(Standard Template Library)
 
