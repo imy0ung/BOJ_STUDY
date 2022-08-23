@@ -51,11 +51,11 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
   * ``` sort(iterator1, iterator2, cmp)```
   * return a < b 부등호 주의!! 같으면 cmp에서 true값을 계속 반환해서 error가 발생한다.
   
-  2-4) unique(iterator1, iterator2) = 정렬된 컨테이너에서 iterator1 부터 iterator2 까지 중복되는 값은 맨 뒤로 보내준다. vector의 erase랑 같이 사용해서, 컨테이너의 중복되는 값을 제거해줄 수 있다.
+  2-5) unique(iterator1, iterator2) = 정렬된 컨테이너에서 iterator1 부터 iterator2 까지 중복되는 값은 맨 뒤로 보내준다. vector의 erase랑 같이 사용해서, 컨테이너의 중복되는 값을 제거해줄 수 있다.
   
-  2-4) lower_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값보다 같거나 큰 값을 찾는 알고리즘. 반환값은 iterator. 아무래도 이진트리다 보니까 logn의 복잡도가 나와서 for문으로 이용하여 위치 찾는 것 보다 훨씬 빠르다..! 오름차순으로 정렬되어있어야 하는 걸 주의하자!
+  2-6) lower_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값보다 같거나 큰 값을 찾는 알고리즘. 반환값은 iterator. 아무래도 이진트리다 보니까 logn의 복잡도가 나와서 for문으로 이용하여 위치 찾는 것 보다 훨씬 빠르다..! 오름차순으로 정렬되어있어야 하는 걸 주의하자!
   
-  2-5) upper_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값을 처음으로 초과하는 값을 찾는 알고리즘. 반환값은 iterator
+  2-7) upper_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값을 처음으로 초과하는 값을 찾는 알고리즘. 반환값은 iterator
 
 ## 3. ``` #include <queue> ```
   3-1) 자료구조 FIFO
