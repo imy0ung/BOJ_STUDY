@@ -112,3 +112,20 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
 * 지우기 : ```s.erase()``` 지우면 1을 반환 못지우면 0을 반환
 * 사이즈 : ```s.size()```
 * 찾기 : ```s.find(n)``` 찾은 값의 iterator를 반환, 찾지못한다면, s.end()를 반환
+
+## 9. ```#include <list> ```
+
+9-1) iterator
+* begin() : 첫번째 iterator 반환
+* end() : 마지막 iterator 반환 (마지막 값이 아니라 맨 마지막 노드임)
+
+9-2) 삽입
+* push_front(element) : 리스트 맨 앞에 원소 추가
+* push_back(element) : 리스트 맨 뒤에 원소 추가
+* insert(iterator, element) : 해당 iterator 앞에 원소 추가
+
+
+9-3) 삭제
+* pop_front() : 리스트 맨 앞의 원소 삭제
+* pop_back() : 리스트 맨 뒤의 원소 삭제
+* erase(iterator) : 해당 iterator 원소 삭제
