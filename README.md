@@ -61,12 +61,12 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
   3-1) queue
   * 자료구조 FIFO
   * queue<type>
-  * push() = 데이터 추가
-  * pop() = 데이터 삭제
-  * front() = 첫번째 원소 반환
-  * back() = 마지막 원소 반환
-  * size() = queue의 크기 
-  * empty() = 비어있으면 1을 반환해줌
+  * ```push()``` = 데이터 추가
+  * ```pop()``` = 데이터 삭제
+  * ```front()``` = 첫번째 원소 반환
+  * ```back()``` = 마지막 원소 반환
+  * ```size()``` = queue의 크기 
+  * ```empty()``` = 비어있으면 1을 반환해줌
 
   3-2) priority queue
   * 우선순위가 있는 queue
@@ -76,15 +76,15 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
 ## 4. ``` #include<stack> ```
   4-1) stack
   * 자료구조 LIFO
-  * push() = top에 데이터 추가
-  * pop() = top에서 데이터 뽑기
-  * size() = stack의 크기
-  * empty() = 비어있으면 1을 반환해줌
+  * ```push()``` = top에 데이터 추가
+  * ```pop()``` = top에서 데이터 뽑기
+  * ```size()``` = stack의 크기
+  * ```empty()``` = 비어있으면 1을 반환해줌
 
   4-2) duque
   * 자료구조 deque (양방향으로 확장 가능한 자료구조)
   * vector와 같이, 인덱스로 접근가능하지만, iterator가 순차적이지 않음
-  * pop_back, pop_front, push_back, push_front, erase, clear, insert 
+  * ```pop_back()```, ```pop_front()```, ```push_back()```, ```push_front()```, ```erase()```, ```clear()```, ```insert()``` 
 
 ## 5. ``` #include <set> ```
 * 중복을 허락하지 않는 key의 집합, 자동으로 오름차순으로 정렬해준다.
@@ -123,16 +123,15 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
 ## 9. ```#include <list> ```
 
 9-1) iterator
-* begin() : 첫번째 iterator 반환
-* end() : 마지막 iterator 반환 (마지막 값이 아니라 맨 마지막 노드임)
+* ```begin()``` : 첫번째 iterator 반환
+* ```end()``` : 마지막 iterator 반환 (마지막 값이 아니라 맨 마지막 노드임)
 
 9-2) 삽입
-* push_front(element) : 리스트 맨 앞에 원소 추가
-* push_back(element) : 리스트 맨 뒤에 원소 추가
-* insert(iterator, element) : 해당 iterator 앞에 원소 추가
-
+* ```push_front(element)``` : 리스트 맨 앞에 원소 추가
+* ```push_back(element)``` : 리스트 맨 뒤에 원소 추가
+* ```insert(iterator, element)``` : 해당 iterator 앞에 원소 추가
 
 9-3) 삭제
-* pop_front() : 리스트 맨 앞의 원소 삭제
-* pop_back() : 리스트 맨 뒤의 원소 삭제
-* erase(iterator) : 해당 iterator 원소 삭제
+* ```pop_front()``` : 리스트 맨 앞의 원소 삭제
+* ```pop_back()``` : 리스트 맨 뒤의 원소 삭제
+* ```erase(iterator)``` : 해당 iterator 원소 삭제
