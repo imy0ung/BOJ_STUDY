@@ -12,6 +12,8 @@ ios::sync_with_stdio(0) =  c와 동기를 끊어서 cin과 cout의 속도를 올
 
 cin.tie(0) = cin의 속도를 올려준다.
 
+getlin(cin,s) = 공백을 포함해서 문자열을 받아준다. 단, type이 string이어야한다.
+
 stl next_permutation << 겨울방학때 백트래킹 공부하면서 알아두자
 ```
 ## STL(Standard Template Library)
