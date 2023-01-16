@@ -58,7 +58,8 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
   2-7) upper_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값을 처음으로 초과하는 값을 찾는 알고리즘. 반환값은 iterator
 
 ## 3. ``` #include <queue> ```
-  3-1) 자료구조 FIFO
+  3-1) queue
+  * 자료구조 FIFO
   * queue<type>
   * push() = 데이터 추가
   * pop() = 데이터 삭제
@@ -73,11 +74,17 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
   * priority_queue<int, vector<int>, greater<int>> pq; = 오름차순 방법
   
 ## 4. ``` #include<stack> ```
-* 자료구조 LIFO
-* push() = top에 데이터 추가
-* pop() = top에서 데이터 뽑기
-* size() = stack의 크기
-* empty() = 비어있으면 1을 반환해줌
+  4-1) stack
+  * 자료구조 LIFO
+  * push() = top에 데이터 추가
+  * pop() = top에서 데이터 뽑기
+  * size() = stack의 크기
+  * empty() = 비어있으면 1을 반환해줌
+
+  4-2) duque
+  * 자료구조 deque (양방향으로 확장 가능한 자료구조)
+  * vector와 같이, 인덱스로 접근가능하지만, iterator가 순차적이지 않음
+  * pop_back, pop_front, push_back, push_front, erase, clear, insert 
 
 ## 5. ``` #include <set> ```
 * 중복을 허락하지 않는 key의 집합, 자동으로 오름차순으로 정렬해준다.
