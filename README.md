@@ -12,7 +12,7 @@ ios::sync_with_stdio(0) =  c와 동기를 끊어서 cin과 cout의 속도를 올
 
 cin.tie(0) = cin의 속도를 올려준다.
 
-auto = type을 알아서 
+auto = type을 알아서 설정해줌
 
 getlin(cin,s) = 공백을 포함해서 문자열을 받아준다. 단, type이 string이어야한다.
 
