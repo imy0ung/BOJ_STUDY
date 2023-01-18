@@ -18,6 +18,8 @@ getlin(cin,s) = 공백을 포함해서 문자열을 받아준다. 단, type이 s
 
 for (auto e : c) = range-based for loop
 
+for (auto e : { } ) = range-based for loop2
+
 for (int i = 0; i < n; i++) fill(arr[i], arr[i] + n, -1) = 2차원 배열을 -1로 다 초기화시켜줌
 
 stl next_permutation << 겨울방학때 백트래킹 공부하면서 알아두자
