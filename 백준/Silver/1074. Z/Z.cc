@@ -1,37 +1,29 @@
 #include <iostream>
-#include <cstdio>
 #include <algorithm>
-#include <vector>
 #include <stack>
 #include <queue>
-#include <unordered_set>
-#include <unordered_map>
-#pragma warning (disable : 4996)
+
+// iterator = container's pointer
+// reference = 일종의 별명, 같은 공간, 메모리 차지 x
+// range-based for loop // for (auto e : s)
 
 using namespace std;
 
-int z(int N, int R, int C) {
-	if (N == 0) return 0;
-	int half = 1<<(N-1);
-	
-	if (R < half && C < half)
-		return z(N - 1, R, C);
-	if (R < half && C >= half)
-		return half * half + z(N - 1, R, C - half);
-	if (R >= half && C < half)
-		return half * half * 2 + z(N - 1, R - half, C);
-	if (R >= half && C >= half)
-		return half * half * 3 + z(N - 1, R - half, C - half);
+int z(int n, int r, int c) {
+	if (n == 0) return 0;
+	int half = 1 << (n - 1);
+	if (r < half && c < half) // 첫번째 사각형
+		return z(n - 1, r, c);
+	if (r < half && c >= half) // 두번째 사각형
+		return (half * half) + z(n - 1, r, c - half);
+	if (r >= half && c < half) // 세번째 사각형
+		return (half * half * 2) + z(n - 1, r - half, c);
+	if (r >= half && c >= half) // 네번째 사각형
+		return (half * half * 3) + z(n - 1, r - half, c - half);
 }
-// 1번사각형 return z(N-1,R,C);
-// 2번사각형 return half * half + z(N-1,R,C);
-// 3번사각형 return half * half * 2 + z(N-1,R,C);
-// 4번사각형 return half * half * 3 + z(N-1,R,C);
 
 int main(void) {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	int N, R, C;
-	cin >> N >> R >> C;
-	cout << z(N, R, C);
+	int n, r, c;
+	cin >> n >> r >> c;
+	cout << z(n, r, c);
 }
