@@ -15,42 +15,26 @@
 using namespace std;
 
 int arr[2200][2200];
-int cnt0, cnt1, cnt2;
+int cnt[3];
 
-void paper(int N, int r, int c) {
-	int flag = 0; int st = arr[r][c];
-	if (N == 1) {
-		if (st == 0) cnt0++;
-		if (st == 1) cnt1++;
-		if (st == -1) cnt2++;
-		return;
-	} // base condition
+bool check(int N, int r, int c) {
 	for (int i = r; i < r + N; i++) {
 		for (int j = c; j < c + N; j++) {
-			if (st != arr[i][j]) {
-				flag = 1;
-				break;
-			}
+			if (arr[r][c] != arr[i][j])
+				return false;
 		}
 	}
-	if (flag == 1) { // 같은 종이가 아니면
-		paper(N / 3, r, c);
-		paper(N / 3, r + (N / 3), c);
-		paper(N / 3, r + 2 * (N / 3), c);
-
-		paper(N / 3, r, c + (N / 3));
-		paper(N / 3, r + (N / 3), c + (N / 3));
-		paper(N / 3, r + 2 * (N / 3), c + (N / 3));
-
-		paper(N / 3, r, c + 2 * (N / 3));
-		paper(N / 3, r + (N / 3), c + 2 * (N / 3));
-		paper(N / 3, r + 2 * (N / 3), c + 2 * (N / 3));
+	return true;
+}
+void paper(int N, int r, int c) {
+	if (check(N, r, c)) {
+		cnt[arr[r][c] + 1] += 1;
+		return;
 	}
-	else { // 같은 종이 일 경우,
-		if (st == 0) cnt0++;
-		if (st == 1) cnt1++;
-		if (st == -1) cnt2++;
-	}
+	int delta = N / 3;
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			paper(delta, r + delta * i, c + delta * j);
 }
 
 int main(void) {
@@ -62,9 +46,9 @@ int main(void) {
 			cin >> arr[i][j];
 	}
 	paper(N, 0, 0);
-	cout << cnt2 << '\n' << cnt0 << '\n' << cnt1;
+	for (int i = 0; i < 3; i++) cout << cnt[i] << '\n';
 }
 
-// basecondition이 있는가? N이 1이면 종료 한다.
+// basecondition이 있는가? N이 1이면 종료 한다. -> 실력자는 같은종이면 종료한다로 함 
 // paper(k)를 9조각의 사각형에 대해 재귀를 호출한다?
 // 재귀가 9번인데 터지지않을까
