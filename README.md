@@ -22,7 +22,6 @@ for (auto e : { } ) = range-based for loop2
 
 for (int i = 0; i < n; i++) fill(arr[i], arr[i] + n, -1) = 2차원 배열을 -1로 다 초기화시켜줌
 
-stl next_permutation << 겨울방학때 백트래킹 공부하면서 알아두자
 ```
 ## STL(Standard Template Library)
 
@@ -66,6 +65,27 @@ iterator = 컨테이너의 포인터 ex) ``` vector<int>:: iterator it;```
   2-6) lower_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값보다 같거나 큰 값을 찾는 알고리즘. 반환값은 iterator. 아무래도 이진트리다 보니까 logn의 복잡도가 나와서 for문으로 이용하여 위치 찾는 것 보다 훨씬 빠르다..! 오름차순으로 정렬되어있어야 하는 걸 주의하자!
   
   2-7) upper_bound(iterator1, iterator2, 해당값) = 이진검색트리로 정렬된 컨테이너에서 해당값을 처음으로 초과하는 값을 찾는 알고리즘. 반환값은 iterator
+  
+  2-8) next_permutation
+  ``` c++
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	int a[3] = { 1,2,3 };
+	do {
+		for (int i = 0; i < 3; i++)
+			cout << a[i];
+		cout << '\n';
+	} while (next_permutation(a, a + 3)); // 가능한 조합을 모두 출력해줌
+	
+	int b[4] = { 0,0,1,1 };
+	do {
+		for (int i = 0; i < 4; i++) {
+			if (b[i] == 1)
+				cout << i + 1;
+		}
+		cout << '\n';
+	} while (next_permutation(b, b + 4)); // C 조합
+  ```
 
 ## 3. ``` #include <queue> ```
   3-1) queue
