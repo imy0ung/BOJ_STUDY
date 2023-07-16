@@ -1,64 +1,61 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <stack>
-#include <queue>
-#include <string>
-#include <list>
+#include <bits/stdc++.h>
+#pragma warning (disable:4996)
 
 using namespace std;
 
-// iterator = container 내의 포인터
-// refernce = 일종의 별명, 변수를 통해 같은 공간을 써서 메모리가 차지 x
-// range - based for loop
-
-deque<int> DQ;
-int N;
-int x;
+// deque vs vector
 
 int main(void) {
-	cin >> N;
-	while (N--) {
-		string s; cin >> s;
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	int n;
+	cin >> n;
+	deque<int> dq;
+
+	while (n--) {
+		string s;
+		cin >> s;
+
 		if (s == "push_front") {
-			cin >> x;
-			DQ.push_front(x);
+			int x; cin >> x;
+			dq.push_front(x);
 		}
 		else if (s == "push_back") {
-			cin >> x;
-			DQ.push_back(x);
+			int x; cin >> x;
+			dq.push_back(x);
 		}
 		else if (s == "pop_front") {
-			if (DQ.empty()) cout << -1 << '\n';
+			if (dq.empty())
+				cout << -1 << '\n';
 			else {
-				cout << DQ.front() << '\n';
-				DQ.pop_front();
+				cout << dq.front() << '\n';
+				dq.pop_front();
 			}
 		}
 		else if (s == "pop_back") {
-			if (DQ.empty()) cout << -1 << '\n';
+			if (dq.empty())
+				cout << -1 << '\n';
 			else {
-				cout << DQ.back() << '\n';
-				DQ.pop_back();
+				cout << dq.back() << '\n';
+				dq.pop_back();
 			}
 		}
 		else if (s == "size") {
-			cout << DQ.size() << '\n';
+			cout << dq.size() << '\n';
 		}
 		else if (s == "empty") {
-			cout << DQ.empty() << '\n';
+			cout << dq.empty() << '\n';
 		}
 		else if (s == "front") {
-			if (DQ.empty()) cout << -1 << '\n';
-			else {
-				cout << DQ.front() << '\n';
-			}
+			if (dq.empty())
+				cout << -1 << '\n';
+			else cout << dq.front() << '\n';
 		}
-		else if (s == "back") {
-			if (DQ.empty()) cout << -1 << '\n';
-			else {
-				cout << DQ.back() << '\n';
-			}
+		else  {
+			if (dq.empty())
+				cout << -1 << '\n';
+			else cout << dq.back() << '\n';
 		}
 	}
 }
