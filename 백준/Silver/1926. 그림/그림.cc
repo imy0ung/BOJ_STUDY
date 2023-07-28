@@ -1,56 +1,47 @@
 #include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <vector>
-#include <stack>
-#include <queue>
-#pragma warning (disable : 4996)
+#include <bits/stdc++.h>
+#pragma warning (disable:4996)
+#define X first
+#define Y second
 
 using namespace std;
 
-#define MAX 500
-
-int board[MAX][MAX];
-int visit[MAX][MAX];
-int cnt = 0;
-queue <pair<int, int>> Q;
-
-int dx[4] = { 1,0,-1,0 }; // 상하
-int dy[4] = { 0,1,0,-1 }; // 좌우
+int MAP[505][505];
+int vis[505][505];
+int dx[4] = { 1, 0, -1, 0 };
+int dy[4] = { 0, 1, 0 , -1 };
+int num, mx;
 
 int main(void) {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	int n, m;
-	int mx = 0;
 	cin >> n >> m;
-
-	for (int i = 0; i < n; i++) { 
-		for (int j = 0; j < m; j++) {
-			scanf("%1d", &board[i][j]);
-		}
-	}
-
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < m; j++)
+			cin >> MAP[i][j];
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
-			if (board[i][j] != 1 || visit[i][j]) continue;
-			cnt++;
+			if (MAP[i][j] == 0 || vis[i][j]) continue;
+			num++;
+			queue <pair<int, int>> Q;
+			int sqr = 0;
 			Q.push({ i,j });
-			visit[i][j] = 1;
-			int area = 0;
+			vis[i][j] = 1;
 			while (!Q.empty()) {
-				area++;
-				pair<int, int> cur = Q.front();
-				Q.pop();
+				sqr++;
+				auto cur = Q.front(); Q.pop();
 				for (int dir = 0; dir < 4; dir++) {
-					int nx = cur.first + dx[dir];
-					int ny = cur.second + dy[dir];
+					int nx = cur.X + dx[dir];
+					int ny = cur.Y + dy[dir];
 					if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
-					if (visit[nx][ny] || board[nx][ny] != 1) continue;
-					visit[nx][ny] = 1;
+					if (vis[nx][ny] || MAP[nx][ny] == 0) continue;
 					Q.push({ nx, ny });
+					vis[nx][ny] = 1;
 				}
 			}
-			mx = max(mx, area);
+			mx = max(sqr, mx);
 		}
 	}
-	cout << cnt << '\n' << mx;
+	cout << num << '\n' << mx;
 }
