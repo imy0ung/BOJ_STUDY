@@ -8,7 +8,7 @@
 
 ### 분류
 
-분할 정복을 이용한 거듭제곱(exponentiation_by_squaring), 수학(math)
+분할 정복을 이용한 거듭제곱, 수학
 
 ### 문제 설명
 

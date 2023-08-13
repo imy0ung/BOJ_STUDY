@@ -1,29 +1,27 @@
 #include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <vector>
-#include <stack>
-#include <queue>
-#include <unordered_set>
-#include <unordered_map>
-#pragma warning (disable : 4996)
-
+#include <bits/stdc++.h>
+#pragma warning (disable:4996)
+#define X first
+#define Y second
+#define ll long long int
 using namespace std;
-using ll = long long;
 
-ll mod(ll a, ll b, ll m) {
-	if (b == 0) return 1;
-	ll val = mod(a, b / 2, m);
-	val = (val * val) % m;
-	if (b % 2 == 0) return val;
+ll a, b, c;
+
+int func(ll a, ll b, ll c) {
+	if (b == 1) return a % c;
+	ll k = func(a, b / 2, c);
+	k = (k * k) % c;
+	if (b % 2 == 0)
+		return k;
 	else 
-		return val * a % m;
+		return k * a % c;
 }
 
 int main(void) {
-	ios::sync_with_stdio(0);
+	iostream::sync_with_stdio(0);
 	cin.tie(0);
-	int A, B, C;
-	cin >> A >> B >> C;
-	cout << mod(A, B, C);
+
+	cin >> a >> b >> c;
+	cout << func(a, b, c);
 }
