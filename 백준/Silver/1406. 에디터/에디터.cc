@@ -1,56 +1,45 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <string>
-#include <list>
-
+#include <bits/stdc++.h>
+#pragma warning (disable:4996)
 using namespace std;
 
-int arr[26];
-// iterator = container 내의 포인터
-// refernce = 일종의 별명, 변수를 통해 같은 공간을 써서 메모리가 차지 x
-// range - based for loop
+// getline(cin,string s) => 공백을 포함한 문자 받기
 
-int n;
 string s;
-list<char> x;
-list<char>::iterator it;
+int m;
+list<char> l;
 
 int main(void) {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	cin >> s;
-	for (auto e : s)
-		x.push_back(e);
+    iostream::sync_with_stdio(0);
+    cin.tie(0);
+    cin >> s;
+    cin >> m;
+    for (auto e : s) {
+        l.push_back(e);
+    }
 
-	it = x.end();
-	cin >> n;
+    auto t = l.end();
 
-	while (n--) {
-		char command;
-		cin >> command;
-
-		if (command == 'L') {
-			if (it != x.begin())
-				it--;
-		}
-		else if (command == 'D') {
-			if (it != x.end()) {
-				it++;
-			}
-		}
-		else if (command == 'B') {
-			if (it != x.begin()) {
-				it--;
-				it = x.erase(it);
-			}
-		}
-		else if (command == 'P') {
-			char c; cin >> c;
-			x.insert(it, c);
-		}
-	}
-	for (auto e : x)
-		cout << e;
+    while (m--) {
+        char c;
+        cin >> c;
+        if (c == 'P') {
+            char x;
+            cin >> x;
+            l.insert(t, x);
+        }
+        if (c == 'L') {
+            if (t != l.begin()) t--;
+        }
+        if (c == 'D') {
+            if (t != l.end()) t++;
+        }
+        if (c == 'B') {
+            if (t != l.begin()) {
+                t--;
+                t = l.erase(t);
+            }
+        }
+    }
+    for (auto e : l) cout << e;
 }
