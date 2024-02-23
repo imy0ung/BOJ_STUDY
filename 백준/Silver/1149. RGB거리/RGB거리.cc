@@ -28,5 +28,5 @@ int main(void) {
         d[i][2] = min(d[i - 1][1], d[i - 1][3]) + G[i];
         d[i][3] = min(d[i - 1][1], d[i - 1][2]) + B[i];
     }
-    cout << min(min(d[n][1], d[n][2]),d[n][3]);
+    cout << min({ d[n][1], d[n][2] ,d[n][3] });
 }
