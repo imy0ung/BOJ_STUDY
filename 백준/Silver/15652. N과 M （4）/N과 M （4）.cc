@@ -1,33 +1,30 @@
 #include <iostream>
 #include <bits/stdc++.h>
-#pragma warning (disable:4996)
-
 using namespace std;
-// 1 2 5 6
 
 int n, m;
-int ans[10];
-int isused[10];
+int arr[10];
 
-void func(int k, int st) {
-	if (m == k) {
+void func(int k) {
+	if (k == m) {
 		for (int i = 0; i < m; i++) {
-			cout << ans[i] << ' ';
+			cout << arr[i] << ' ';
 		}
 		cout << '\n';
 		return;
 	}
+	int st = 1;
+	if (k != 0) st = arr[k - 1];
 	for (int i = st; i <= n; i++) {
-		if (!isused[i]) {
-			ans[k] = i;
-			func(k + 1, ans[k]);
-		}
+		arr[k] = i;
+		func(k + 1);
 	}
 }
 
-int main(void) {
-	iostream::sync_with_stdio(0);
+int main() {
+	ios::sync_with_stdio(0);
 	cin.tie(0);
+
 	cin >> n >> m;
-	func(0,1);
+	func(0);
 }
