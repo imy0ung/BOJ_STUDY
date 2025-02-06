@@ -1,5 +1,7 @@
 **BOJ_STUDY with Cpp**
 ---
+https://github.com/encrypted-def/basic-algo-lecture/blob/master/workbook.md
+
 ## 백준에서 사용하는 기본적인 c++ 팁들
 ```c++
 #include <iostream> = cpp에서의 입출력
