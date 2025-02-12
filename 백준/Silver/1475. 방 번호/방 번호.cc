@@ -1,36 +1,31 @@
-#include <iostream>
-#include <bits/stdc++.h>
-#pragma warning (disable:4996)
+#include <iostream>	
+#include <algorithm>
+#define ll long long
 
 using namespace std;
 
-int card[10] ;
-int ans;
+int card[10];
 
-int main(void) {
-	iostream::sync_with_stdio(0);
-	cin.tie(0);
+int main() {
+	int N; cin >> N;
+	
+	while (N != 0) {
+		int k = N % 10;
+		N /= 10;
 
-	int a;
-	cin >> a;
-
-	while (a != 0) {
-		int k = a % 10;
-		a = a / 10;
 		if (card[k] == 0) {
-			if (k == 6 && card[9] > 0) {
-				card[9]--;
-				continue;
+			if (k == 6 && card[9] > 0) card[9]--;
+
+			else if (k == 9 && card[6] > 0) card[6]--;
+
+			else {
+				for (int i = 0; i <= 9; i++) {
+					if (i == k) continue;
+					card[i]++;
+				}
 			}
-			if (k == 9 && card[6] > 0) {
-				card[6]--;
-				continue;
-			}
-			for (int i = 0; i < 10; i++)
-				card[i]++;
-			ans++;
 		}
-		card[k]--;
+		else card[k]--;
 	}
-	cout << ans;
+	cout << *max_element(card, card + 10);
 }
