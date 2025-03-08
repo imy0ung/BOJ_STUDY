@@ -1,54 +1,49 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <stack>
-#include <queue>
-#include <string>
-#include <list>
-
-#define X first
-#define Y second
-// 보통 1억에 1초 
-// TC가 10만기준으로 O(N)은 1/1000초
-// TC가 10만기준으로 O(N^2)은 100억 , 100초
-// TC가 105*105
+#include <bits/stdc++.h>
 using namespace std;
 
-int arr[2200][2200];
-int cnt[3];
 
-bool check(int N, int r, int c) {
-	for (int i = r; i < r + N; i++) {
-		for (int j = c; j < c + N; j++) {
-			if (arr[r][c] != arr[i][j])
-				return false;
-		}
-	}
-	return true;
+// k step 때, 각 사분면의 색종이 개수를 알면 k+1일 때도 알 수 있다.
+
+int paper[2200][2200];
+int ans[3];
+int n;
+
+int check(int k, int r, int c) {
+    for (int i = r; i < r + k; i++) {
+        for (int j = c; j < c + k; j++) {
+            if (paper[r][c] != paper[i][j]) 
+                return 0;
+        }
+    }
+    return 1;
 }
-void paper(int N, int r, int c) {
-	if (check(N, r, c)) {
-		cnt[arr[r][c] + 1] += 1;
-		return;
-	}
-	int delta = N / 3;
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++)
-			paper(delta, r + delta * i, c + delta * j);
+
+void func(int k, int r, int c) {
+    if (check(k,r,c)) {
+        ans[paper[r][c] + 1]++;
+        return;
+    }
+
+    int tmp = k / 3;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            func(tmp, r + tmp * i, c + tmp * j); // 초기 r과 c가 있어야함
+        }
+    }
 }
 
 int main(void) {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	int N; cin >> N;
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++)
-			cin >> arr[i][j];
-	}
-	paper(N, 0, 0);
-	for (int i = 0; i < 3; i++) cout << cnt[i] << '\n';
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> paper[i][j];
+        }
+    }
+    func(n, 0, 0);
+    for (int i = 0; i < 3; i++)
+        cout << ans[i] << '\n';
 }
-
-// basecondition이 있는가? N이 1이면 종료 한다. -> 실력자는 같은종이면 종료한다로 함 
-// paper(k)를 9조각의 사각형에 대해 재귀를 호출한다?
-// 재귀가 9번인데 터지지않을까
