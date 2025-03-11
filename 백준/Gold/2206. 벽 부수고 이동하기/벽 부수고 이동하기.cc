@@ -41,10 +41,8 @@ int main(void) {
     }
 
     while (!q.empty()) {
-        auto cur = q.front(); q.pop();
-        int first = get<0>(cur);
-        int second = get<1>(cur);
-        int world = get<2>(cur);
+        int first, second, world;
+        tie(first,second,world) = q.front(); q.pop();
 
         for (int dir = 0; dir < 4; dir++) {
             int nx = first + dx[dir];
@@ -60,7 +58,7 @@ int main(void) {
             }
 
             // 벽을 뚫는 경우..
-            if (world == 0 && board[nx][ny] == '1' && dist[nx][ny][1] == -1) {
+            if (world == 0 && board[nx][ny] == '1' && dist[nx][ny][0] == -1) {
                 q.push({ nx,ny,1 });
                 dist[nx][ny][1] = dist[first][second][0] + 1;
             }
