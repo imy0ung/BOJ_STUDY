@@ -1,25 +1,30 @@
-#include <iostream>
-#include <bits/stdc++.h>
+#include <iostream>	
+#include <algorithm>
+#include <list>
+#include <stack>
+#include <queue>
+#include <tuple>
+#define ll long long
+
 using namespace std;
 
 int n, s;
 int arr[30];
-int vis[30];
-int cnt;
+int cnt = 0;
 
-void func(int k, int tot) {
-	if (k == n) {
+void func(int cur, int tot) {
+	if (cur == n) {
 		if (tot == s) cnt++;
 		return;
 	}
-	func(k + 1, tot);
-	func(k + 1, tot + arr[k]);
+	func(cur + 1, tot);
+	func(cur + 1, tot + arr[cur]);
 }
+
 
 int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-
 	cin >> n >> s;
 	for (int i = 0; i < n; i++) cin >> arr[i];
 	func(0, 0);
