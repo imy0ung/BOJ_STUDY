@@ -1,32 +1,31 @@
-#include <iostream>
-#include <bits/stdc++.h>
-#pragma warning (disable:4996)
+#include <iostream>	
+#include <algorithm>
+#include <list>
+#include <stack>
+#include <queue>
+#include <tuple>
+#define ll long long
 
 using namespace std;
-// 1 2 5 6
 
-int n, m, st;
-int ans[10];
-int isused[10];
+int n, m;
+int arr[15];
 
 void func(int k) {
-	if (m == k) {
-		for (int i = 0; i < m; i++) {
-			cout << ans[i] << ' ';
-		}
+	if (k == m) {
+		for (int i = 0; i < m; i++)
+			cout << arr[i] << ' ';
 		cout << '\n';
 		return;
 	}
 	for (int i = 1; i <= n; i++) {
-		if (!isused[i]) {
-			ans[k] = i;
-			func(k + 1);
-		}
+		arr[k] = i;
+		func(k + 1);
 	}
 }
 
-int main(void) {
-	iostream::sync_with_stdio(0);
+int main() {
+	ios::sync_with_stdio(0);
 	cin.tie(0);
 	cin >> n >> m;
 	func(0);
