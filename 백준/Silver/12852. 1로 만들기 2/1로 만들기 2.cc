@@ -1,7 +1,10 @@
-#include <iostream>
+#include <iostream>	
 #include <algorithm>
+#include <list>
 #include <stack>
 #include <queue>
+#include <tuple>
+#define ll long long
 
 using namespace std;
 
@@ -18,15 +21,16 @@ int main(void) {
 	for (int i = 2; i <= n; i++) {
 		d[i] = d[i - 1] + 1;
 		pre[i] = i - 1;
-		if (i % 3 == 0 && d[i] > d[i/3] + 1) {
+		if (i % 3 == 0 && d[i] > d[i / 3] + 1) {
 			d[i] = d[i / 3] + 1;
 			pre[i] = i / 3;
 		}
-		if (i % 2 == 0 && d[i] > d[i/2] + 1) {
+		if (i % 2 == 0 && d[i] > d[i / 2] + 1) {
 			d[i] = d[i / 2] + 1;
 			pre[i] = i / 2;
 		}
 	}
+
 	cout << d[n] << '\n';
 	int cur = n;
 	while (1) {
