@@ -1,39 +1,39 @@
-#include <iostream>
-#include <bits/stdc++.h>
-#pragma warning (disable:4996)
+#include <iostream>	
+#include <algorithm>
+#include <list>
+#include <stack>
+#include <queue>
+#include <tuple>
+#define ll long long
+
 using namespace std;
-using ll = long long;
-// getline(cin,string s) => 공백을 포함한 문자 받기
-// list- insert는 앞부분, iterator 햇갈리지말자,,
-// deque vs vector, 메모리 연속성 차이, deque이 상위호환느낌
 
 int n, m;
-int isused[10000];
 int arr[10];
-int inp[10];
+int idx[10];
+int isused[10];
 
 void func(int k) {
-    if (k == m) {
-        for (int i = 0; i < m; i++)
-            cout << arr[i] << ' ';
-        cout << '\n';
-        return;
-    }
-    for (int i = 0; i < n; i++) {
-        if (!isused[inp[i]]) {
-            arr[k] = inp[i];
-            isused[inp[i]] = 1;
-            func(k + 1);
-            isused[inp[i]] = 0;
-        }
-    }
+	if (k == m) {
+		for (int i = 0; i < m; i++)
+			cout << arr[idx[i]] << ' ';
+		cout << '\n';
+	}
+	for (int i = 0; i < n; i++) {
+		if (isused[i]) continue;
+		idx[k] = i;
+		isused[i] = 1;
+		func(k + 1);
+		isused[i] = 0;
+	}
 }
 
 int main(void) {
-    iostream::sync_with_stdio(0);
-    cin.tie(0);
-    cin >> n >> m;
-    for (int i = 0; i < n; i++) cin >> inp[i];
-    sort(inp, inp + n);
-    func(0);
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	cin >> n >> m;
+	for (int i = 0; i < n; i++) cin >> arr[i];
+	sort(arr, arr + n);
+	func(0);
 }
